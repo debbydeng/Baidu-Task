@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task 23</title>
+    <style>
+        #wrap{
+            height:150px;
+        }
+        div{
+           display:flex;
+            flex-flow:row nowrap;
+            justify-content:space-around;
+            border:1px solid salmon;
+            margin:10px;
+            flex:1;
+
+        }
+        .outer1,.outer2{
+            flex:2;
+        }
+        .outer3{
+            flex:1;
+        }
+
+    </style>
+</head>
+<body>
+<button id="start">开始遍历</button>
+<div id="wrap">
+    Super
+    <div class="outer1">Coco
+        <div>
+            Apple
+            <div>Poor</div>
+            <div>Pig</div>
+            <div>Cola</div>
+            <div>Soccer</div>
+        </div>
+        <div>
+            Phone
+        </div>
+        <div>
+            <div>book</div>
+            <div>School</div>
+        </div>
+    </div>
+    <div class="outer2">
+        Noto
+        <div>Human
+            <div>code</div>
+            <div>operator</div>
+            <div>man</div>
+        </div>
+        <div>program
+            <div>bement
+                <div>cat</div>
+            </div>
+            <div>glass</div>
+        </div>
+
+    </div>
+    <div class="outer3">
+        F&H
+    </div>
+</div>
+<input type="text" id="check"/><br/>
+<button id="result">查询按钮</button>
+<button id="del">删除</button>
+<button id="add">添加</button>
+<input value="insert content" type="text"/>
+<script type=text/javascript src="task23.js"></script>
+</body>
+</html>

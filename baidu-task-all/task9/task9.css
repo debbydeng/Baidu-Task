@@ -1,0 +1,127 @@
+/* header 样式*/
+header{
+background:#2189bf;
+    width:100%;
+    height:50px;
+    position:relative;
+}
+header img{
+    position:absolute;
+    left:50px;
+    top:50%;
+    transform:translateY(-50%);
+}
+header label{
+    position:absolute;
+    right:100px;
+    top:50%;
+    transform:translateY(-50%);
+}
+header input{
+    height:25px;
+    width:300px;
+    border:none;
+    border-radius:20px;
+background:#fff url("image/zoom.png") 17px 5px no-repeat;
+}
+header span:before{
+    display:inline-block;
+    content:url("image/login.png");
+    margin-left:20px;
+    margin-right:5px;
+}
+/*右侧边栏 样式*/
+aside{
+    width:240px;
+    background:#2a2e3d;
+    float:left;
+    padding:30px 30px 500px;
+    color:white;
+}
+aside .out{
+    display:inline-block;
+    width:60px;
+    height:60px;
+    border:1px solid #fff;
+    border-radius:30px;
+    position:relative;
+}
+aside .inside{
+    position:absolute;
+    top:3.5px;
+    left:3.5px;
+    display:inline-block;
+    width:50px;
+    height:50px;
+    border:1px solid #fff;
+    border-radius:25px;
+    background:#b9babd;
+
+}
+aside .name{
+    position:relative;
+}
+aside strong{
+    position:absolute;
+    left:70px;
+    top:25px;
+}
+
+.cal li{
+    display:table;
+    float:left;
+}
+.cal:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+aside .report{
+    background:url("image/file_open.png") left top no-repeat;
+    padding-left:30px;
+}
+aside p{
+    padding-left:30px;
+}
+aside .report ul{
+
+    list-style-image: url("image/file_close.png");
+}
+aside .report .txt{
+    list-style-image: url("image/doc_close.png")
+}
+aside .xin{
+    background:url("image/star.png") left top no-repeat;
+}
+aside .share{
+    background:url("image/share.png") left top no-repeat;
+}
+aside .account{
+    background:url("image/gou.png") left top no-repeat;
+}
+
+/* content 样式*/
+section:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+section.WContent{
+    background:#d5d5d5;
+    padding:20px 40px;
+    float:left;
+}
+.route{
+    line-height:40px;
+    background:white;
+    padding-left:340px;
+}
+.route a{
+    color:lightgrey;
+    text-decoration: none;
+    font-weight:bold;
+}
+.choose, .BS, .change, .date, button{
+    float:left;
+    margin-right:20px;
+}

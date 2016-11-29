@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            font:15px/25px "微软雅黑";
+            color:dodgerblue;
+        }
+        li{
+            list-style-type: none;
+            cursor:pointer;
+        }
+        .right-arrow ul{
+            display:none;
+        }
+        .down-arrow{
+            padding-left:25px;
+            background:url("down-arrow1.png") left top no-repeat;
+        }
+        .right-arrow{
+            padding-left:25px;
+            margin-left:-25px;
+            background:url("right-arrow1.png") left top no-repeat;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>树形组件</legend>
+    <input id="inquire" type="text" value="inquire content"/>
+    <button id="btn1">搜索</button>
+    <button id="btn2">清除</button>
+<ul>
+    <li class="down-arrow">前端工程师
+        <ul>
+            <li class="right-arrow">技术
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>javascript</li>
+                    <li>PHP</li>
+                    <li class="right-arrow">Node.JS
+                        <ul>
+                            <li>javascript</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="right-arrow">IT公司
+                <ul>
+                    <li>百度</li>
+                    <li>腾讯</li>
+                    <li>大众点评</li>
+                </ul>
+            </li>
+            <li class="right-arrow">谈笑风生
+                <ul>
+                    <li>深井冰</li>
+                    <li>你看呢</li>
+                    <li class="right-arrow">脑子有坑
+                        <ul><li>苟利国家生死以</li></ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</fieldset>
+<script type="text/javascript" src="task25.js"></script>
+</body>
+</html>

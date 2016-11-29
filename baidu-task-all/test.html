@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            font-size: 1rem;
+        }
+        body{
+            width: 100%;
+        }
+        label{
+            height: 80px;
+            margin: 20% 20%;
+            display: block;
+        }
+        input:nth-child(2){
+            width: 300px;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid #a8a8a8;
+            padding-left: 10px;
+
+        }
+        button:nth-child(3){
+            background-color: #2F79BA;
+            border: 2px solid white;
+            color: white;
+            border-radius: 5px;
+            width: 100px;
+            height: 50px;
+
+        }
+        #tip{
+            color: #a8a8a8;
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+<label>
+    <span>名称</span>
+    <input id='msg' type="text" autofocus="autofocus"/>
+    <button type="button" value="验证" onclick="validate();" >验证</button>
+    <p id="tip">必填，长度为4~16个字符</p>
+</label>
+<script type="text/javascript">
+    var msgDom = document.getElementById('msg');
+    var tipDom = document.getElementById('tip');
+
+    function validate() {
+        var msg = msgDom.value;
+        if(GetLength(msg) == 0){
+            tipDom.innerHTML = '姓名不能为空';
+            tipDom.style.color = 'red';
+            msgDom.style.border = '2px solid red';
+        }
+        else if(GetLength(msg) >= 4 && GetLength(msg) <= 16){
+            tipDom.innerHTML = '格式正确';
+            tipDom.style.color = 'lightgreen';
+            msgDom.style.border = '2px solid lightgreen';
+        }
+        else {
+            tipDom.innerHTML = '字符数应为4~16位';
+            tipDom.style.color = 'red';
+            msgDom.style.border = '2px solid red';
+        }
+    }
+
+    var GetLength = function(str)
+    {
+        var realLength = 0;
+        for (var i = 0; i < str.length; i++)
+        {
+            charCode = str.charCodeAt(i);
+            if (charCode >= 0 && charCode <= 128)
+                realLength += 1;
+            else
+                realLength += 2;
+        }
+        return realLength;
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/*容器*/
+body{
+    margin:0 auto;
+    width:85%;
+    padding:20px;
+    background-color:#eee;
+    border:1px solid #999;
+
+}
+.clearfix:after{
+    content:"";
+    clear:both;
+    display:block;
+}
+/*第一列*/
+.name{
+    float:left;
+    width:160px;
+    padding:20px;
+    background:#fff;
+    border:1px solid #999;
+}
+.name img{
+    float:left;
+    border:1px solid #999;
+  margin-right:20px;
+}
+/*第三列*/
+aside{
+    float:right;
+    width:80px;
+    padding:0 20px;
+    border:1px solid #999;
+    background:#fff;
+}
+aside ul li{
+    display:block;
+   margin-left:-42px;
+    margin-top:20px;
+    border:1px solid #999;
+}
+/*中间列*/
+.introduction{
+    padding:20px;
+    border:1px solid #999;
+    margin-left:220px;
+    margin-right:140px;
+    background:#fff;
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+        <html>
+<head>
+    <meta charset="utf-8">
+    <title>task 18</title>
+</head>
+<body>
+<script type="text/javascript">
+    var body=document.getElementsByTagName("body")[0];
+var input=document.createElement("input");
+    body.appendChild(input);
+    input.style.marginRight="10px";
+
+    var butLI=document.createElement("button");
+var butLIText=document.createTextNode("左侧入");
+    butLI.appendChild(butLIText);
+    body.appendChild(butLI);
+    butLI.style.marginRight="10px";
+
+    var butRI=document.createElement("button");
+    var butRIText=document.createTextNode("右侧入");
+    butRI.appendChild(butRIText);
+    body.appendChild(butRI);
+    butRI.style.marginRight="30px";
+
+    var butLO=document.createElement("button");
+    var butLOText=document.createTextNode("左侧出");
+    butLO.appendChild(butLOText);
+    body.appendChild(butLO);
+    butLO.style.marginRight="10px";
+
+    var butRO=document.createElement("button");
+    var butROText=document.createTextNode("右侧出");
+    butRO.appendChild(butROText);
+    body.appendChild(butRO);
+
+    var div=document.createElement("div");
+    body.appendChild(div);
+//事件绑定函数，兼容浏览器差异
+    function addEvent(element,event,listener){
+        if(element.addEventListener){
+            element.addEventListener(event,listener,false);
+        }
+        else if(element.attachEvent){
+            element.attachEvent("on"+event,listener);
+        }
+        else{element["on"+event]=listener;}
+    }
+//遍历数组，针对每个元素执行fn函数
+    function each(arr,fn){
+        for(var cur=0;cur<arr.length;cur++){
+            fn(arr[cur],cur)
+        }
+    }
+
+var queue={
+    str:[],
+    leftPush:function(num){
+        this.str.unshift(num);
+        this.paint();
+    },
+    rightPush:function(num){
+        this.str.push(num);
+        this.paint();
+    },
+    isEmpty:function(){
+        return(this.str.length==0);
+    },
+    leftPop:function(){
+        if(!this.isEmpty()){
+            alert(this.str.shift());
+            this.paint();
+        }
+        else{
+            alert("the queue is already empty")
+        }
+    },
+    rightPop:function(){
+        if(!this.isEmpty()){
+            alert(this.str.pop());
+            this.paint();
+        }
+        else{
+            alert("the queue is already empty");
+        }
+    },
+    paint:function(){
+        var str="";
+        each(this.str,function(item){str+=("<div style='display:inline-block;background:red;line-height:50px;padding:20px;margin:20px;'>"+parseInt(item)+"</div>")});
+        div.innerHTML=str;
+     //   addDivDelEvent();
+    }};
+   /* deleteID:function(id){
+        alert(id);
+        this.str.splice(id,1);
+        this.paint();
+    }
+
+
+
+    function addDivDelEvent(){
+        for(var cur=0;cur<div.childNodes.length;cur++){
+           addEvent(div.childNodes[cur],"click",function(cur){
+return function(){return queue.deleteID(cur)};
+            }(cur))
+        }
+    }*/
+
+    addEvent(butLI,"click",function(){
+        if ((/^[0-9]+$/).test(input.value)) {
+            queue.leftPush(input.value);
+        }
+        else {
+            alert("Please enter an number!");
+        }
+    });
+    addEvent(butRI,"click",function(){
+        if ((/^[0-9]+$/).test(input.value)) {
+            queue.rightPush(input.value);
+        }
+        else {
+            alert("Please enter an number!");
+        }
+    });
+    addEvent(butLO, "click", function(){queue.leftPop()});
+    addEvent(butRO, "click", function(){queue.rightPop()});
+
+
+</script>
+</body>
+
+</html>

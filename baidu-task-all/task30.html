@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font:1rem "微软雅黑";
+        }
+        table{
+            margin:20%;
+        }
+        th,td{
+            text-align:right;
+            padding:10px 20px;
+        }
+        th p,td p{
+            text-align:left;
+            display:none;
+        }
+
+        input{
+            width:400px;
+            border-radius:5px;
+            border:1px solid black;
+            height:40px;
+        }
+        button{
+            background-color: #2F79BA;
+            border: 2px solid white;
+            color: white;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+        }
+        input:focus +p{
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>名称</th>
+        <th><input id="1" type="text"/><p class="tip">必填，长度为4-16个字符</p></th>
+    </tr>
+    <tr>
+        <td>密码</td>
+        <td><input id="2" type="text"/><p class="tip">必填，长度为4-16个字符，包括字母和数字</p></td>
+    </tr>
+    <tr>
+        <td>密码确认</td>
+        <td><input id="3" type="text"/><p class="tip">必填，与密码相同</p></td>
+    </tr>
+
+    <tr>
+        <td>邮箱</td>
+        <td><input id="4" type="text"/><p class="tip">必填，请填入正确邮箱号</p></td>
+    </tr>
+    <tr>
+        <td>手机</td>
+        <td><input id="5" type="text"/><p class="tip">必填，请填入正确手机号</p></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button id="btn1">提交</button></td>
+    </tr>
+</table>
+<script type="text/javascript">
+ var tipText=[
+     {right:"名称格式正确",wrong:"名称格式有误"},
+     {right:"密码可用",wrong:"密码不可用"},
+     {right:"密码输入一致",wrong:"密码输入不一致"},
+     {right:"邮箱格式正确",wrong:"邮箱格式错误"},
+     {right:"手机格式正确",wrong:"手机格式错误"}
+ ];
+function validate(id){
+    var input=document.getElementsByTagName("input")[id];
+    var tip=document.getElementsByClassName("tip");
+    var re;
+ switch(parseInt(id)){
+     case 0:re=/[\u4E00-\u9FA5A-Za-z0-9_]{4,16}/g.test(input.value);break;
+     case 1:re=/[A-Za-z0-9]{4,16}/g.test(input.value);break;
+     case 2:re=(input[1].value==input[2].value);break;
+     case 3:re=/^\w +[@]\w +[.][\w.] +$/g.test(input.value);break;
+     case 4:re=/[1][0-9]{10}/g.test(input.value);break;
+ }
+    if(re){
+        input.style.borderColor = "green";
+        tip[id].innerHTML="<p>"+tipText[i].right+"</p>";
+        tip[id].style.color="green";
+    }
+    else{
+        input.style.borderColor = "red";
+        tip[id].innerHTML="<p>"+tipText[i].wrong+"</p>";
+        tip[id].style.color="red";
+    }
+ }
+ var inputs=document.getElementsByTagName("input");
+for(var i=0;i<inputs.length;i++){
+    inputs[i].onblur=function(){validate(i)}(i);
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+        <html>
+<head>
+    <title>task 22- javascript和树</title>
+    <meta charset="utf-8">
+    <style>
+.wrap{
+    padding:10px;
+    display:flex;
+    width:1000px;
+    height:400px;
+    border:1px solid black;
+    flex-flow:row wrap;
+    justify-content:space-around;
+    align-items:center;
+}
+
+        .first,.second,.third{
+           display:flex;
+            border:1px solid sandybrown;
+            padding:10px;
+            justify-content:space-around;
+            align-items:center;
+        }
+        .first{
+            width:450px;
+            height:350px;
+        }
+        .second{
+            width:200px;
+            height:300px;
+        }
+        .third{
+            width:50px;
+            height:250px;
+        }
+        form{
+            margin-left:450px;
+            margin-bottom:10px;
+            width:150px;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+<select id="place">
+    <option value="front" id="front">前</option>
+    <option value="middle" id="middle">中</option>
+    <option value="back" id="back">后</option>
+</select>
+    <button type="button" id="start" value="开始遍历">开始遍历</button>
+</form>
+
+<div class="wrap">
+    <div class="first">
+        <div class="second">
+            <div class="third"></div>
+            <div class="third"></div>
+        </div>
+        <div class="second">
+            <div class="third"></div>
+            <div class="third"></div>
+        </div>
+    </div>
+    <div class="first">
+        <div class="second">
+            <div class="third"></div>
+            <div class="third"></div>
+        </div>
+        <div class="second">
+            <div class="third"></div>
+            <div class="third"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="task22.js"></script>
+</body>
+</html>

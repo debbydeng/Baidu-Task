@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font:1rem "微软雅黑";
+        }
+
+        #wrap{
+            padding:20px;
+            margin:20%;
+            height: 80px;
+        }
+        input{
+            width:300px;
+           height:40px;
+            margin-right:30px;
+            border:1px solid black;
+            border-radius:5px;
+            padding-left: 10px;
+        }
+    #btn1{
+        background-color: #2F79BA;
+        border: 2px solid white;
+        color: white;
+        border-radius: 5px;
+        width: 100px;
+        height: 50px;
+
+    }
+        #hint{
+            color: #a8a8a8;
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">名称
+<input id="input" type="text" value=""/>
+<button id="btn1">验证</button>
+<p id="hint">必填，长度为4~16个字符</p>
+</div>
+<script type="text/javascript">
+    var btn1=document.getElementById("btn1");
+    var check;
+    btn1.onclick=function() {
+        check = document.getElementById("input").value;
+        var hint = document.getElementById("hint");
+        if (count(check) == 0) {
+            hint.innerHTML = "姓名不能为空";
+            check.style.color = "red";
+            check.style.border = '2px solid red';
+        }
+        else if (count(check) >= 4 && count(check) <= 16) {
+            hint.innerHTML = "输入正确";
+            check.style.color = "lightgreen";
+            check.style.border = "2px solid lightgreen";
+        }
+        else {
+            hint.innerHTML = "请输入长度为4~16位字符";
+            check.style.color = "red";
+            check.style.border = '2px solid red';
+        }
+    };
+function count(node){
+    var countLength=0;
+    for(var i=0;i<node.length;i++){
+        var countCode=node.charCodeAt(i);
+        if(countCode>=0&&countCode<=128){countLength+=1;}
+        else{countLength+=2}
+    }
+    return countLength;
+}
+</script>
+</body>
+</html>
